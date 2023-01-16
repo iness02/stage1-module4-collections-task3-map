@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FunctionValueFinderTest {
     public static Stream<Arguments> testCases() {
         return Stream.of(
-                Arguments.of("EmptySourceList",
+                Arguments.of ("EmptySourceList",
                         List.of(),
                         52,
                         false),
