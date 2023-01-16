@@ -10,16 +10,16 @@ public class WordRepetitionMapCreator {
 
         Map<String, Integer> repetitionMap = new HashMap<>();
         sentence=sentence.replaceAll("[,.]","");
-        List<String> sentenceWords = new java.util.ArrayList<>(List.of(sentence.split("\s")));
+        String[] sentenceWords = sentence.split(" ");
         int count=0;
         if(!sentence.isEmpty()) {
-            for (int i = 0; i < sentenceWords.size(); i++) {
-                for (int j = 0; j < sentenceWords.size(); j++) {
-                    if (sentenceWords.get(i).equalsIgnoreCase(sentenceWords.get(j))) {
+            for (int i = 0; i < sentenceWords.length; i++) {
+                for (int j = 0; j < sentenceWords.length; j++) {
+                    if (sentenceWords[i].equalsIgnoreCase(sentenceWords[j])) {
                         count++;
                     }
                 }
-                repetitionMap.put(sentenceWords.get(i).toLowerCase(Locale.ROOT), count);
+                repetitionMap.put(sentenceWords[i].toLowerCase(Locale.ROOT), count);
                 count = 0;
             }
         }
